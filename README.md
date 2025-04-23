@@ -1,73 +1,88 @@
-# Welcome to your Lovable project
 
-## Project info
+# TaskFlow Dashboard
 
-**URL**: https://lovable.dev/projects/611e095e-6ad9-4589-a9f1-239c90403df5
+An interactive SaaS dashboard built with React, TypeScript, and Tailwind CSS, showcasing task management data through statistics, charts, and filterable tables.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Responsive Layout**: Clean dashboard layout with sidebar navigation that adapts to mobile, tablet, and desktop screens
+- **Stats Cards**: Visual representation of key metrics like total tasks, tasks due today, overdue tasks, and completed tasks
+- **Interactive Charts**: Data visualization using Recharts, displaying task distribution by status and priority
+- **Filterable Data Table**: Client-side filtering with search functionality and dropdown filters for task status and priority
+- **Mock Data**: TypeScript-typed mock data representing tasks with various attributes
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/611e095e-6ad9-4589-a9f1-239c90403df5) and start prompting.
+- **React**: UI component library
+- **TypeScript**: Static type checking
+- **Tailwind CSS**: Utility-first CSS framework for styling
+- **React Router**: For navigation
+- **Recharts**: For data visualization
+- **Shadcn UI**: For UI components
 
-Changes made via Lovable will be committed automatically to this repo.
+## Component Structure
 
-**Use your preferred IDE**
+- **DashboardLayout**: Main layout component with sidebar and content area
+- **Sidebar**: Navigation sidebar with menu items
+- **StatCard**: Reusable card component for displaying key metrics
+- **ChartWidget**: Wrapper for charts with two variations (pie and bar)
+- **FilterBar**: Search and filter controls for the data table
+- **TaskTable**: Interactive table component with client-side filtering
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Running the Project
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Start the development server with `npm run dev`
+4. Navigate to the provided localhost URL in your browser
 
-Follow these steps:
+## Implementation Details
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Task Data Model
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+The application uses a TypeScript interface to define the structure of a Task:
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```typescript
+export interface Task {
+  id: string;
+  title: string;
+  status: 'Todo' | 'In Progress' | 'Done' | 'Overdue';
+  priority: 'Low' | 'Medium' | 'High';
+  dueDate: string;
+  assignee?: string;
+  description?: string;
+  createdAt: string;
+}
 ```
 
-**Edit a file directly in GitHub**
+### Client-Side Filtering
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The task table implements client-side filtering using React's useState and useMemo hooks to efficiently filter the displayed tasks based on:
 
-**Use GitHub Codespaces**
+- Free text search in the task title
+- Status dropdown selection
+- Priority dropdown selection
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Responsive Design
 
-## What technologies are used for this project?
+The dashboard is fully responsive with:
+- A collapsible sidebar that transforms to a mobile menu on smaller screens
+- Card grids that adjust columns based on screen size
+- A table that adapts its displayed columns on mobile devices
 
-This project is built with:
+## AI Assistance
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project was developed with the assistance of AI, which helped with:
+- Initial project structure planning
+- Component architecture design
+- TypeScript interfaces and types
+- Tailwind CSS styling implementation
+- Chart configuration
 
-## How can I deploy this project?
+## Future Enhancements
 
-Simply open [Lovable](https://lovable.dev/projects/611e095e-6ad9-4589-a9f1-239c90403df5) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Server-side filtering and pagination for larger datasets
+- Task creation and editing functionality
+- User authentication and authorization
+- Dark mode support
+- More detailed analytics and reporting features
