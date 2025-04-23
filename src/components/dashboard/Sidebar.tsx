@@ -1,4 +1,3 @@
-
 import { FolderKanban, PieChart, Calendar, Settings, Users, Home } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -55,8 +54,8 @@ export const Sidebar = () => {
           </li>
           <li>
             <Link 
-              to="#" 
-              className="flex items-center p-2 rounded-lg hover:bg-slate-700 text-gray-300 hover:text-white transition-colors"
+              to="/settings" 
+              className={`flex items-center p-2 rounded-lg ${path === "/settings" ? "bg-slate-700 text-white" : "text-gray-300 hover:bg-slate-700 hover:text-white transition-colors"}`}
             >
               <Settings className="w-5 h-5 mr-3" />
               Settings

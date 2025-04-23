@@ -76,8 +76,8 @@ export const MobileNav = () => {
                 </li>
                 <li>
                   <Link
-                    to="#"
-                    className="flex items-center p-2 rounded-lg hover:bg-slate-700 text-gray-300 hover:text-white transition-colors"
+                    to="/settings"
+                    className={`flex items-center p-2 rounded-lg ${path === "/settings" ? "bg-slate-700 text-white" : "text-gray-300 hover:bg-slate-700 hover:text-white transition-colors"}`}
                     onClick={() => setIsOpen(false)}
                   >
                     Settings
