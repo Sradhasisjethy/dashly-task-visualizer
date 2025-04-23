@@ -1,4 +1,3 @@
-
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -59,17 +58,8 @@ export const MobileNav = () => {
                 </li>
                 <li>
                   <Link
-                    to="#"
-                    className="flex items-center p-2 rounded-lg hover:bg-slate-700 text-gray-300 hover:text-white transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Projects
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="#"
-                    className="flex items-center p-2 rounded-lg hover:bg-slate-700 text-gray-300 hover:text-white transition-colors"
+                    to="/calendar"
+                    className={`flex items-center p-2 rounded-lg ${path === "/calendar" ? "bg-slate-700 text-white" : "text-gray-300 hover:bg-slate-700 hover:text-white transition-colors"}`}
                     onClick={() => setIsOpen(false)}
                   >
                     Calendar
@@ -77,8 +67,8 @@ export const MobileNav = () => {
                 </li>
                 <li>
                   <Link
-                    to="#"
-                    className="flex items-center p-2 rounded-lg hover:bg-slate-700 text-gray-300 hover:text-white transition-colors"
+                    to="/team"
+                    className={`flex items-center p-2 rounded-lg ${path === "/team" ? "bg-slate-700 text-white" : "text-gray-300 hover:bg-slate-700 hover:text-white transition-colors"}`}
                     onClick={() => setIsOpen(false)}
                   >
                     Team

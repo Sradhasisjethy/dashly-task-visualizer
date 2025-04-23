@@ -1,5 +1,5 @@
 
-import { FolderKanban, PieChart, Calendar, Settings, Users, Home, FilePieChart } from "lucide-react";
+import { FolderKanban, PieChart, Calendar, Settings, Users, Home } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export const Sidebar = () => {
@@ -37,17 +37,8 @@ export const Sidebar = () => {
           </li>
           <li>
             <Link 
-              to="#" 
-              className="flex items-center p-2 rounded-lg hover:bg-slate-700 text-gray-300 hover:text-white transition-colors"
-            >
-              <FilePieChart className="w-5 h-5 mr-3" />
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link 
-              to="#" 
-              className="flex items-center p-2 rounded-lg hover:bg-slate-700 text-gray-300 hover:text-white transition-colors"
+              to="/calendar" 
+              className={`flex items-center p-2 rounded-lg ${path === "/calendar" ? "bg-slate-700 text-white" : "text-gray-300 hover:bg-slate-700 hover:text-white transition-colors"}`}
             >
               <Calendar className="w-5 h-5 mr-3" />
               Calendar
@@ -55,8 +46,8 @@ export const Sidebar = () => {
           </li>
           <li>
             <Link 
-              to="#" 
-              className="flex items-center p-2 rounded-lg hover:bg-slate-700 text-gray-300 hover:text-white transition-colors"
+              to="/team" 
+              className={`flex items-center p-2 rounded-lg ${path === "/team" ? "bg-slate-700 text-white" : "text-gray-300 hover:bg-slate-700 hover:text-white transition-colors"}`}
             >
               <Users className="w-5 h-5 mr-3" />
               Team
