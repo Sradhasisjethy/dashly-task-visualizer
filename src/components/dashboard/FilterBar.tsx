@@ -48,7 +48,7 @@ export const FilterBar = ({
               <SelectValue placeholder="Status" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Statuses</SelectItem>
+              <SelectItem value="all-statuses">All Statuses</SelectItem>
               <SelectItem value="Todo">Todo</SelectItem>
               <SelectItem value="In Progress">In Progress</SelectItem>
               <SelectItem value="Done">Done</SelectItem>
@@ -60,7 +60,7 @@ export const FilterBar = ({
               <SelectValue placeholder="Priority" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Priorities</SelectItem>
+              <SelectItem value="all-priorities">All Priorities</SelectItem>
               <SelectItem value="Low">Low</SelectItem>
               <SelectItem value="Medium">Medium</SelectItem>
               <SelectItem value="High">High</SelectItem>
